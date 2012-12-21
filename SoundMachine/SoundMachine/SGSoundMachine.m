@@ -31,9 +31,7 @@
 
 -(id)init {
     if (self) {
-        
-        self.soundIsOn = YES;
-        
+                
         NSString *newSoundPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"Sounds"];
         NSError *error = nil;
         NSArray *soundFileNameArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:newSoundPath error:&error];
@@ -69,7 +67,7 @@
 
 -(void)playSoundWithName:(NSString *)soundName {
     
-    if ([self soundIsOn] == YES) {
+    if ([self soundIsOff] == NO) {
         
         NSNumber *soundIDNumber = self.soundDictionary[soundName];
         if (soundIDNumber) {

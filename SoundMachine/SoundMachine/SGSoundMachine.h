@@ -11,7 +11,8 @@
 @interface SGSoundMachine : NSObject
 
 +(SGSoundMachine *) soundMachine;
-@property (nonatomic, assign) BOOL soundIsOn;
+
+@property (nonatomic, assign) BOOL soundIsOff;
 
 -(void)playSoundWithName:(NSString *)soundName;
 

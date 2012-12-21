@@ -49,12 +49,12 @@
 }
 
 - (IBAction)muteButtonWasTapped:(UIButton *)sender {
-    if ([[SGSoundMachine soundMachine] soundIsOn] == YES) {
-        [[SGSoundMachine soundMachine] setSoundIsOn:NO];
+    if ([[SGSoundMachine soundMachine] soundIsOff] == NO) {
+        [[SGSoundMachine soundMachine] setSoundIsOff:YES];
         [sender setTitle:@"Unmute" forState:UIControlStateNormal];
     }
     else {
-        [[SGSoundMachine soundMachine] setSoundIsOn:YES];
+        [[SGSoundMachine soundMachine] setSoundIsOff:NO];
         [sender setTitle:@"Mute" forState:UIControlStateNormal];
     }
 }
