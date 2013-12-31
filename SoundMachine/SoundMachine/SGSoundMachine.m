@@ -45,14 +45,14 @@
                 NSURL* soundURL = [NSURL fileURLWithPath:soundPath];
                 
                 NSNumber *soundIDNumber = self.soundDictionary[fileName];
-                SystemSoundID soundID = soundIDNumber.integerValue;
+                SystemSoundID soundID = (int)soundIDNumber.integerValue;
                 
                 OSStatus err = AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &soundID);
                 
                 [temporaryDictionary addEntriesFromDictionary:@{fileName : [NSNumber numberWithInteger:soundID]}];
                 
                 if (err != kAudioServicesNoError) {
-                    NSLog(@"Could not load %@, error code: %ld", soundURL, err);
+                    NSLog(@"Could not load %@, error code: %d", soundURL, (int)err);
                 }
             }
             else {
@@ -71,7 +71,7 @@
         
         NSNumber *soundIDNumber = self.soundDictionary[soundName];
         if (soundIDNumber) {
-            SystemSoundID soundID = soundIDNumber.integerValue;
+            SystemSoundID soundID = (int)soundIDNumber.integerValue;
             AudioServicesPlaySystemSound(soundID);
         }
     }
