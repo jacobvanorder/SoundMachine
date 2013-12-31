@@ -44,8 +44,13 @@
             if (soundPath) {
                 NSURL* soundURL = [NSURL fileURLWithPath:soundPath];
                 
-                NSNumber *soundIDNumber = _soundDictionary[fileName];
+<<<<<<< HEAD
+                NSNumber *soundIDNumber = self.soundDictionary[fileName];
                 SystemSoundID soundID = (int)soundIDNumber.integerValue;
+=======
+                NSNumber *soundIDNumber = _soundDictionary[fileName];
+                SystemSoundID soundID = soundIDNumber.integerValue;
+>>>>>>> 0534eeb5fa847b9b8b82f7ad9b9870fc8df61dad
                 
                 OSStatus err = AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &soundID);
                 
