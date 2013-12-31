@@ -44,8 +44,8 @@
             if (soundPath) {
                 NSURL* soundURL = [NSURL fileURLWithPath:soundPath];
                 
-                NSNumber *soundIDNumber = self.soundDictionary[fileName];
-                SystemSoundID soundID = (int)soundIDNumber.integerValue;
+                NSNumber *soundIDNumber = _soundDictionary[fileName];
+                SystemSoundID soundID = soundIDNumber.integerValue;
                 
                 OSStatus err = AudioServicesCreateSystemSoundID((__bridge CFURLRef)soundURL, &soundID);
                 
@@ -60,7 +60,7 @@
             }
         }
         
-        self.soundDictionary = [NSDictionary dictionaryWithDictionary:temporaryDictionary];
+        _soundDictionary = [NSDictionary dictionaryWithDictionary:temporaryDictionary];
     }
     return self;
 }
@@ -71,7 +71,7 @@
         
         NSNumber *soundIDNumber = self.soundDictionary[soundName];
         if (soundIDNumber) {
-            SystemSoundID soundID = (int)soundIDNumber.integerValue;
+            SystemSoundID soundID = soundIDNumber.integerValue;
             AudioServicesPlaySystemSound(soundID);
         }
     }
