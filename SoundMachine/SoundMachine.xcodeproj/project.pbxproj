@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		763A8F6719C6316D00E3FC2F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 763A8F6619C6316D00E3FC2F /* Images.xcassets */; };
+		763A8F6A19C63CDC00E3FC2F /* SGSoundMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 763A8F6919C63CDC00E3FC2F /* SGSoundMachine.swift */; };
 		76A4E1F91684BD5E0018474E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A4E1F81684BD5E0018474E /* UIKit.framework */; };
 		76A4E1FB1684BD5E0018474E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A4E1FA1684BD5E0018474E /* Foundation.framework */; };
 		76A4E1FD1684BD5E0018474E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76A4E1FC1684BD5E0018474E /* CoreGraphics.framework */; };
@@ -27,7 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		763A8F6619C6316D00E3FC2F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SoundMachine/Images.xcassets; sourceTree = "<group>"; };
+		763A8F6619C6316D00E3FC2F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		763A8F6819C63CDC00E3FC2F /* SoundMachine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SoundMachine-Bridging-Header.h"; sourceTree = "<group>"; };
+		763A8F6919C63CDC00E3FC2F /* SGSoundMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGSoundMachine.swift; sourceTree = "<group>"; };
 		76A4E1F51684BD5E0018474E /* SoundMachine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundMachine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A4E1F81684BD5E0018474E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		76A4E1FA1684BD5E0018474E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -108,6 +111,7 @@
 				76A4E2131684BD5F0018474E /* SGViewController.h */,
 				76A4E2141684BD5F0018474E /* SGViewController.m */,
 				76A4E1FF1684BD5E0018474E /* Supporting Files */,
+				763A8F6619C6316D00E3FC2F /* Images.xcassets */,
 			);
 			name = "Test App";
 			path = SoundMachine;
@@ -132,7 +136,8 @@
 			children = (
 				76A4E21F1684BEE10018474E /* SGSoundMachine.h */,
 				76A4E2201684BEE10018474E /* SGSoundMachine.m */,
-				763A8F6619C6316D00E3FC2F /* Images.xcassets */,
+				763A8F6919C63CDC00E3FC2F /* SGSoundMachine.swift */,
+				763A8F6819C63CDC00E3FC2F /* SoundMachine-Bridging-Header.h */,
 			);
 			name = SoundMachine;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A4E2051684BD5E0018474E /* main.m in Sources */,
+				763A8F6A19C63CDC00E3FC2F /* SGSoundMachine.swift in Sources */,
 				76A4E2091684BD5F0018474E /* SGAppDelegate.m in Sources */,
 				76A4E2151684BD5F0018474E /* SGViewController.m in Sources */,
 				76A4E2211684BEE10018474E /* SGSoundMachine.m in Sources */,
@@ -298,11 +304,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoundMachine/SoundMachine-Prefix.pch";
 				INFOPLIST_FILE = "SoundMachine/SoundMachine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoundMachine-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -312,11 +322,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SoundMachine/SoundMachine-Prefix.pch";
 				INFOPLIST_FILE = "SoundMachine/SoundMachine-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SoundMachine-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
